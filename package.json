@@ -1,6 +1,6 @@
 {
   "name": "@hivary/engine-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Public Packages that are used by the Hivary Engine",
   "author": "hivary",
   "license": "MIT",
@@ -12,7 +12,7 @@
   "scripts": {
     "start:dev": "tsc -w",
     "build": "rimraf dist && tsc",
-    "prepare": "npm run build && npm pack",
+    "prepare": "npm run build",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "test": "jest",
