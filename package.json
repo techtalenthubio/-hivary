@@ -4,7 +4,6 @@
   "description": "Public Packages that are used by the Hivary Engine",
   "author": "hivary",
   "license": "MIT",
-  "readmeFilename": "README.md",
   "main": "dist/index.js",
   "files": [
     "dist/**/*",
@@ -13,7 +12,7 @@
   "scripts": {
     "start:dev": "tsc -w",
     "build": "rimraf dist && tsc",
-    "prepare": "npm run build",
+    "prepare": "npm run build && npm pack",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "test": "jest",
@@ -26,14 +25,15 @@
     "hivary"
   ],
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/hivary"
+    "registry": "https://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/techtalenthubio/engine-utils"
+    "url": "git+https://github.com/techtalenthubio/engine-utils.git"
   },
-  "bugs": "https://github.com/techtalenthubio/engine-utils/issues",
+  "bugs": {
+    "url": "https://github.com/techtalenthubio/engine-utils/issues"
+  },
   "peerDependencies": {
     "@nestjs/common": "^10.3.0"
   },
@@ -73,5 +73,7 @@
     },
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  "types": "./dist/index.d.ts",
+  "homepage": "https://github.com/techtalenthubio/engine-utils#readme"
 }
