@@ -1,4 +1,5 @@
-name: Publish Package to npmjs
+name: Publish to NPM
+
 on:
   push:
     branches:
@@ -7,19 +8,24 @@ on:
     branches:
       - main
 jobs:
-  build-and-deploy:
+  build-and-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout to main branch
-        uses: actions/checkout@v4
-      - name: install and build
-        run: npm ci
-      - name: publish to npm registry
-        uses: action/setup-node@v3
-        with:
+    - name: Check out repository
+      uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
           node-version: '21.x'
           registry-url: 'https://npm.pkg.github.com/'
           scope: '@hivary'
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - name: Install Deps
+      run: npm install
+    - name: Build Package
+      run: npm run prepare
+    - name: Pack build
+      run: npm pack
+    - name: Publish to NPM
+      run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
