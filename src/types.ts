@@ -2,7 +2,7 @@
  * Enum representing the roles in the system.
  * @alpha
  */
-const ERoles = {
+export const ERoles = {
   ADMIN: 'ADMIN',
   SUPER_ADMIN: 'SUPER_ADMIN',
   USER: 'USER',
@@ -14,7 +14,7 @@ const ERoles = {
  * Enum representing the roles in the system.
  * @alpha
  */
-const EPUBLIC_KEY = 'isPublic' as const;
+export const EPUBLIC_KEY = 'isPublic' as const;
 
 /**
  * Type representing the value of an object.
