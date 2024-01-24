@@ -59,10 +59,9 @@
       "src/index.ts"
     ],
     "dts": true,
-    "sourcemap": true,
+    "sourcemap": false,
     "format": [
-      "cjs",
-      "esm"
+      "cjs"
     ],
     "clean": true,
     "minify": true,
