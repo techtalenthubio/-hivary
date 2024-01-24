@@ -1,7 +1,7 @@
 {
   "name": "@hivary/engine-utils",
   "license": "MIT",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "author": "hivary",
   "description": "Public Packages that are used by the Hivary Engine",
   "main": "dist/index.js",
