@@ -16,5 +16,5 @@ jobs:
           node-version: 21.6.0
           cache: 'pnpm'
 
-      - run: pnpm install
+      - run: pnpm install --no-frozen-lockfile
       - run: pnpm run lint && pnpm run build
