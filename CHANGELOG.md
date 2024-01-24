@@ -1,5 +1,16 @@
 # @hivary/engine-utils
 
+## 0.5.0
+
+### Minor Changes
+
+- 0d70027: bundle size reduced
+- 9c0b27d: bundle size
+
+### Patch Changes
+
+- 9cc8a79: removed tgz file
+
 ## 0.2.0
 
 ### Minor Changes
