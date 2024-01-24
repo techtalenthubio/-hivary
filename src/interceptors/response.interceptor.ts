@@ -1,12 +1,21 @@
-import {
-  Injectable,
-  NestInterceptor,
-  ExecutionContext,
-  CallHandler,
-} from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { firstValueFrom, of } from 'rxjs';
+import { Injectable } from '@nestjs/common';
 
+import {
+  type NestInterceptor,
+  type ExecutionContext,
+  type CallHandler,
+} from '@nestjs/common';
+
+
+/**
+ * @remarks This class is an interceptor for the response.
+ * @param context - The context to be used.
+ * @param next - The next to be used.
+ * @returns The response.
+ * @alpha
+ */
 @Injectable()
 export class ResponseInterceptor implements NestInterceptor {
   statusMessages: { [key: string]: string };
